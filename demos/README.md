@@ -1,25 +1,24 @@
-# Incremental group demonstrations
+# Demonstrations
 
-These are simplified teaching versions adapted from an existing local scheduler reference. This restarted repository begins with Day 1 only. They demonstrate features progressively; they do not represent the original creation history of the reference application.
+Each `dayN/src` folder contains a standalone version with entry point `demo.Main`.
 
-Each day's source is independent and retained so the group can rerun earlier demonstrations. Future days are created on their actual work dates. Each entry point is `demo.Main`, built using only that day's `src` folder.
+## Day 1
 
-## Run Day 1
+An empty appointment table and date heading. Run **Run Day 1 Demo.cmd** from the project root.
 
-Double-click **Day 1 Demo** (the shortcut with an arrow) in the main project folder. It opens the graphical application without a terminal. The window contains today's date and an empty, read-only appointment table. No add/edit/delete, storage, recurrence or reminders are included yet.
+## Day 2
 
-After editing source, use **Run Day 1 Demo.cmd** to rebuild and launch. This developer launcher briefly opens a terminal for compiler messages. Every build creates a new JAR and updates the shortcut, so rebuilding works even while an older demo is still open. Existing windows keep their earlier version until closed. Build outputs are retained in `dist/demos/day1`; shortcuts are local and regenerated on another computer by running the build script.
+An appointment entry form and table. Run **Run Day 2 Demo.cmd** from the project root.
 
-Explain the JFrame, BorderLayout, JTable, constructor calls and Swing event thread. This is a short interface demonstration, not the final assignment demo.
+For a short group demonstration:
 
-## Planned feature progression
+1. Leave the title blank and choose **Add appointment** to show validation.
+2. Enter a title, a date as `YYYY-MM-DD`, and times as `HH:mm`.
+3. Choose **Add appointment** and show the new table row.
+4. Try an end time before the start time; the existing rows remain unchanged.
 
-| Day | Date | Features visible to the group |
-| --- | --- | --- |
-| 1 | 2 November | Basic window and empty schedule |
-| 2 | 3 November | Add appointments, validate inputs, display them in the table |
-| 3 | 4 November | Edit/delete appointments, save/reload, day/week/month views |
-| 4 | 5 November | Reminders, recurrence and clash detection |
-| 5 | 6 November | Calendar export, final integration and submission rehearsal |
+Appointments are kept only while the Day 2 window is open. Editing, deletion, storage and reminders are scheduled for later versions.
 
-Days 2-5 are planned, not yet built or verified. Each later day includes the earlier features and gets its own `Run Day N Demo.cmd` launcher. Build and manually check the GUI before committing it. The full reference application is preserved outside this repository.
+## Build and launch
+
+The `.cmd` launchers compile the selected source and generate a **Day N Demo** shortcut in the project root. Use the shortcut for presentations without a terminal window. Each build uses a new JAR filename, allowing an earlier version to remain open during a rebuild. Build output is stored under `build/` and `dist/` and is excluded from Git.
