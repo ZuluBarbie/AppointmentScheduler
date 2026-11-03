@@ -13,4 +13,4 @@ GUI verification on Windows:
 - Adding `Group demonstration` with a valid date and 09:00-10:00 times displayed one row and a total of one.
 - Input labels, success/error feedback and the in-memory storage notice were visible.
 
-The sample appointment existed only in the verification window's memory. No macOS testing or future milestone results are claimed.
+The sample appointment existed only in the verification window's memory.

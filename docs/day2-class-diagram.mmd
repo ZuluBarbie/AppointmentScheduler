@@ -1,0 +1,24 @@
+classDiagram
+class Main {
+  +main(String[] args)$ void
+}
+class JFrame
+class SchedulerFrame {
+  -List~Appointment~ appointments
+  -DefaultTableModel model
+  +SchedulerFrame()
+  -addAppointment() void
+}
+class Appointment {
+  -String title
+  -LocalDate date
+  -LocalTime start
+  -LocalTime end
+  -String location
+  +Appointment(String, LocalDate, LocalTime, LocalTime, String)
+  +fromInput(String, String, String, String, String)$ Appointment
+  +toTableRow() Object[]
+}
+Main ..> SchedulerFrame : creates
+SchedulerFrame --|> JFrame
+SchedulerFrame "1" o-- "0..*" Appointment : stores

@@ -42,7 +42,7 @@ public class Main {
             table.setFillsViewportHeight(true);
             table.setRowHeight(28);
             content.add(new JScrollPane(table), BorderLayout.CENTER);
-            content.add(new JLabel("No appointments yet. Adding appointments is the next milestone."),
+            content.add(new JLabel("No appointments."),
                     BorderLayout.SOUTH);
 
             frame.setContentPane(content);

@@ -26,6 +26,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File demos/test-demo.ps1 -Day 2
 
 See [test results](docs/TEST_RESULTS.md) for verified checks and [requirements](docs/REQUIREMENTS.md) for the remaining assignment work.
 
+## Report and design
+
+The [technical progress report](docs/SDN150S_Project12_Technical_Report.pdf) covers Day 2 and includes pseudocode, a UML class diagram and the Java source listing. The [Word version](docs/SDN150S_Project12_Technical_Report.docx) is editable. The [diagram source](docs/day2-class-diagram.mmd) is maintained with the code.
+
 ## Development milestones
 
 | Date | Features | Status |
