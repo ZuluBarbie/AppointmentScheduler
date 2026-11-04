@@ -1,0 +1,14 @@
+classDiagram
+Main ..> SchedulerFrame : creates
+SchedulerFrame --|> JFrame
+SchedulerFrame --> AppointmentBook : uses
+SchedulerFrame ..> Appointment : validates input
+AppointmentBook "1" o-- "0..*" Appointment : stores
+class AppointmentBook {
+  -Path file
+  -List~Appointment~ entries
+  +add(Appointment)
+  +update(int, Appointment)
+  +delete(int)
+  +view(LocalDate, String) List~Appointment~
+}

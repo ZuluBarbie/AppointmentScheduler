@@ -4,14 +4,14 @@ Source: SDN150S Project Brief, due 8 November 2026, general requirements and Pro
 
 ## Application
 
-| Requirement | Status on 3 November |
+| Requirement | Status on 4 November |
 | --- | --- |
-| Java GUI using frame forms | Swing JFrame implemented; NetBeans visual form integration pending |
+| Java GUI using frame forms | Day 3 JFrame and paired form opened in NetBeans Design |
 | Create appointments | Implemented in Day 2 |
-| Edit and delete appointments | Planned for Day 3 |
+| Edit and delete appointments | Implemented in Day 3 |
 | Set reminders | Planned for Day 4 |
-| Daily, weekly and monthly schedule views | Planned for Day 3 |
-| Constructors, modifiers and control statements | Present in Day 2 classes |
+| Daily, weekly and monthly schedule views | Implemented in Day 3 |
+| Constructors, modifiers and control statements | Present in Day 3 classes |
 | Error handling and input validation | Date, time and title validation implemented |
 | Readable code with comments and whitespace | Present; review continues with each milestone |
 | Regular, meaningful version-control updates | Git repository maintained on GitHub |
@@ -27,4 +27,4 @@ Recurring appointments, conflict detection and external-calendar integration are
 - Video demonstration lasting 3-5 minutes.
 - Evidence of group participation and regular repository updates.
 
-The current milestone is not a completed submission. The report must reflect the final code and verified results. Team details and the final report and recording remain outstanding.
+The current milestone is not a completed submission. The report reflects the current code and verified results. Eight member names and student numbers are included; Noluthando's surname remains outstanding. The final report and recording follow completion of the remaining functions.

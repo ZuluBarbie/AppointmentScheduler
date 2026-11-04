@@ -1,0 +1,256 @@
+package demo;
+
+import java.awt.Color;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.time.LocalDate;
+import java.util.List;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
+/** Day 3 frame. The paired form describes the components for NetBeans Design. */
+public class SchedulerFrame extends JFrame {
+    private AppointmentBook book;
+    private LocalDate anchor = LocalDate.now();
+    private List<Appointment> visible = List.of();
+    private final DefaultTableModel model = new DefaultTableModel(
+            new String[]{"Title", "Date", "Start", "End", "Location"}, 0) {
+        @Override public boolean isCellEditable(int row, int column) { return false; }
+    };
+
+    @SuppressWarnings("unchecked")
+    public SchedulerFrame() {
+        initComponents();
+        ((JPanel) getContentPane()).setBorder(BorderFactory.createEmptyBorder(16,16,16,16));
+        periodBox.setModel(new DefaultComboBoxModel<>(new String[]{"Day", "Week", "Month"}));
+        anchorField.setColumns(10);
+        table.setModel(model);
+        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.setFillsViewportHeight(true);
+        table.setRowHeight(28);
+        String[] labels = {"Title", "Appointment date", "Start time", "End time", "Location", "View date"};
+        JTextField[] inputs = {titleField,dateField,startField,endField,locationField,anchorField};
+        for (int i=0;i<inputs.length;i++) { inputs[i].getAccessibleContext().setAccessibleName(labels[i]); }
+        table.getAccessibleContext().setAccessibleName("Appointments");
+        addButton.addActionListener(e -> save(false));
+        updateButton.addActionListener(e -> save(true));
+        deleteButton.addActionListener(e -> deleteSelected());
+        clearButton.addActionListener(e -> clear());
+        table.getSelectionModel().addListSelectionListener(e -> { if (!e.getValueIsAdjusting()) select(); });
+        showButton.addActionListener(e -> showDate());
+        anchorField.addActionListener(e -> showDate());
+        periodBox.addActionListener(e -> refresh());
+        previousButton.addActionListener(e -> move(-1));
+        nextButton.addActionListener(e -> move(1));
+        todayButton.addActionListener(e -> { anchor=LocalDate.now(); refresh(); });
+        try {
+            book = new AppointmentBook(Path.of(System.getProperty("scheduler.dataFile","appointments.tsv")));
+        } catch (IOException ex) {
+            addButton.setEnabled(false);
+            message("Cannot load data. File preserved: " + ex.getMessage(),true);
+            JOptionPane.showMessageDialog(this,ex.getMessage(),"Could not load appointments",JOptionPane.ERROR_MESSAGE);
+        }
+        clear();
+        refresh();
+        if (book != null) message("Loaded " + book.getAll().size() + " appointments. Changes save automatically.",false);
+        setMinimumSize(new java.awt.Dimension(1000,440));
+        setSize(1120,560);
+        setLocationRelativeTo(null);
+    }
+
+    private void message(String text, boolean error) {
+        statusLabel.setForeground(error ? new Color(170,20,20) : new Color(0,90,35));
+        statusLabel.setText(text);
+    }
+
+    private void showDate() {
+        try { anchor=LocalDate.parse(anchorField.getText().trim()); refresh(); }
+        catch (RuntimeException ex) { message("Enter a valid view date as YYYY-MM-DD.",true); }
+    }
+
+    private void move(int direction) {
+        String period=(String)periodBox.getSelectedItem();
+        anchor=switch(period) {
+            case "Week" -> anchor.plusWeeks(direction);
+            case "Month" -> anchor.plusMonths(direction);
+            default -> anchor.plusDays(direction);
+        };
+        refresh();
+    }
+
+    private void refresh() {
+        anchorField.setText(anchor.toString());
+        visible=book==null ? List.of() : book.view(anchor,(String)periodBox.getSelectedItem());
+        model.setRowCount(0);
+        for (Appointment a:visible) model.addRow(a.toTableRow());
+        updateButton.setEnabled(false);
+        deleteButton.setEnabled(false);
+    }
+
+    private void select() {
+        int row=table.getSelectedRow();
+        boolean selected=row>=0 && row<visible.size();
+        updateButton.setEnabled(selected && book!=null);
+        deleteButton.setEnabled(selected && book!=null);
+        if (!selected) return;
+        Object[] values=visible.get(row).toTableRow();
+        JTextField[] fields={titleField,dateField,startField,endField,locationField};
+        for(int i=0;i<fields.length;i++) fields[i].setText(values[i].toString());
+    }
+
+    private void clear() {
+        table.clearSelection();
+        titleField.setText(""); locationField.setText("");
+        dateField.setText(anchor.toString()); startField.setText("09:00"); endField.setText("10:00");
+    }
+
+    private void save(boolean editing) {
+        if(book==null) return;
+        int row=table.getSelectedRow();
+        if(editing && row<0) { message("Select an appointment first.",true); return; }
+        try {
+            Appointment a=Appointment.fromInput(titleField.getText(),dateField.getText(),
+                    startField.getText(),endField.getText(),locationField.getText());
+            if(editing) book.update(book.getAll().indexOf(visible.get(row)),a);
+            else book.add(a);
+            anchor=a.getDate(); refresh(); clear();
+            message((editing ? "Updated" : "Added") + ": " + a.getTitle()+". Saved. Total: "+book.getAll().size(),false);
+        } catch (IllegalArgumentException | IOException ex) { message("Not saved: "+ex.getMessage(),true); }
+    }
+
+    private void deleteSelected() {
+        int row=table.getSelectedRow();
+        if(book==null || row<0) return;
+        Appointment a=visible.get(row);
+        if(JOptionPane.showConfirmDialog(this,"Delete " + a.getTitle() + "?", "Delete appointment",
+                JOptionPane.YES_NO_OPTION)!=JOptionPane.YES_OPTION) return;
+        try {
+            book.delete(book.getAll().indexOf(a)); refresh(); clear();
+            message("Deleted: " + a.getTitle() + ". Saved.",false);
+        } catch(IOException ex) { message("Not deleted: "+ex.getMessage(),true); }
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+        topPanel = new javax.swing.JPanel();
+        topPanel.setLayout(new java.awt.BorderLayout(8, 8));
+        navigationPanel = new javax.swing.JPanel();
+        navigationPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+        viewLabel = new javax.swing.JLabel();
+        viewLabel.setText("View");
+        navigationPanel.add(viewLabel);
+        periodBox = new javax.swing.JComboBox();
+        navigationPanel.add(periodBox);
+        anchorLabel = new javax.swing.JLabel();
+        anchorLabel.setText("Date (YYYY-MM-DD)");
+        navigationPanel.add(anchorLabel);
+        anchorField = new javax.swing.JTextField();
+        anchorField.setText("");
+        navigationPanel.add(anchorField);
+        showButton = new javax.swing.JButton();
+        showButton.setText("Show");
+        navigationPanel.add(showButton);
+        previousButton = new javax.swing.JButton();
+        previousButton.setText("Previous");
+        navigationPanel.add(previousButton);
+        todayButton = new javax.swing.JButton();
+        todayButton.setText("Today");
+        navigationPanel.add(todayButton);
+        nextButton = new javax.swing.JButton();
+        nextButton.setText("Next");
+        navigationPanel.add(nextButton);
+        topPanel.add(navigationPanel, java.awt.BorderLayout.NORTH);
+        fieldsPanel = new javax.swing.JPanel();
+        fieldsPanel.setLayout(new java.awt.GridLayout(2, 5, 10, 6));
+        titleLabel = new javax.swing.JLabel();
+        titleLabel.setText("Title (required)");
+        fieldsPanel.add(titleLabel);
+        dateLabel = new javax.swing.JLabel();
+        dateLabel.setText("Date (YYYY-MM-DD)");
+        fieldsPanel.add(dateLabel);
+        startLabel = new javax.swing.JLabel();
+        startLabel.setText("Start (HH:mm)");
+        fieldsPanel.add(startLabel);
+        endLabel = new javax.swing.JLabel();
+        endLabel.setText("End (HH:mm)");
+        fieldsPanel.add(endLabel);
+        locationLabel = new javax.swing.JLabel();
+        locationLabel.setText("Location (optional)");
+        fieldsPanel.add(locationLabel);
+        titleField = new javax.swing.JTextField();
+        titleField.setText("");
+        fieldsPanel.add(titleField);
+        dateField = new javax.swing.JTextField();
+        dateField.setText("");
+        fieldsPanel.add(dateField);
+        startField = new javax.swing.JTextField();
+        startField.setText("");
+        fieldsPanel.add(startField);
+        endField = new javax.swing.JTextField();
+        endField.setText("");
+        fieldsPanel.add(endField);
+        locationField = new javax.swing.JTextField();
+        locationField.setText("");
+        fieldsPanel.add(locationField);
+        topPanel.add(fieldsPanel, java.awt.BorderLayout.CENTER);
+        actionsPanel = new javax.swing.JPanel();
+        actionsPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+        addButton = new javax.swing.JButton();
+        addButton.setText("Add appointment");
+        actionsPanel.add(addButton);
+        updateButton = new javax.swing.JButton();
+        updateButton.setText("Save changes");
+        actionsPanel.add(updateButton);
+        deleteButton = new javax.swing.JButton();
+        deleteButton.setText("Delete selected");
+        actionsPanel.add(deleteButton);
+        clearButton = new javax.swing.JButton();
+        clearButton.setText("Clear selection");
+        actionsPanel.add(clearButton);
+        topPanel.add(actionsPanel, java.awt.BorderLayout.SOUTH);
+        getContentPane().add(topPanel, java.awt.BorderLayout.NORTH);
+        scrollPane = new javax.swing.JScrollPane();
+        table = new javax.swing.JTable();
+        scrollPane.setViewportView(table);
+        getContentPane().add(scrollPane, java.awt.BorderLayout.CENTER);
+        statusLabel = new javax.swing.JLabel();
+        statusLabel.setText("Select an appointment to edit or delete.");
+        getContentPane().add(statusLabel, java.awt.BorderLayout.SOUTH);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Appointment Scheduler - Day 3");
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel topPanel;
+    private javax.swing.JPanel navigationPanel;
+    private javax.swing.JLabel viewLabel;
+    private javax.swing.JComboBox periodBox;
+    private javax.swing.JLabel anchorLabel;
+    private javax.swing.JTextField anchorField;
+    private javax.swing.JButton showButton;
+    private javax.swing.JButton previousButton;
+    private javax.swing.JButton todayButton;
+    private javax.swing.JButton nextButton;
+    private javax.swing.JPanel fieldsPanel;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JLabel dateLabel;
+    private javax.swing.JLabel startLabel;
+    private javax.swing.JLabel endLabel;
+    private javax.swing.JLabel locationLabel;
+    private javax.swing.JTextField titleField;
+    private javax.swing.JTextField dateField;
+    private javax.swing.JTextField startField;
+    private javax.swing.JTextField endField;
+    private javax.swing.JTextField locationField;
+    private javax.swing.JPanel actionsPanel;
+    private javax.swing.JButton addButton;
+    private javax.swing.JButton updateButton;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton clearButton;
+    private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JTable table;
+    private javax.swing.JLabel statusLabel;
+    // End of variables declaration//GEN-END:variables
+}

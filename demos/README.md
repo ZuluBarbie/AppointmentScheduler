@@ -19,6 +19,12 @@ For a short group demonstration:
 
 Appointments are kept only while the Day 2 window is open. Editing, deletion, storage and reminders are scheduled for later versions.
 
+## Day 3
+
+Run **Run Day 3 Demo.cmd**, or use the generated **Day 3 Demo** shortcut. Add an appointment, select its row, change the title and choose **Save changes**. **Delete selected** asks for confirmation. Switch between Day, Week and Month, and use Previous, Today, Next or a view date with **Show**. Close and reopen to check persistence.
+
+Data is saved after each successful change. An invalid or unreadable file is preserved and editing is blocked; restore a known-good backup before reopening. A failed write leaves the previous in-memory records intact. Use one window per data file.
+
 ## Build and launch
 
 The `.cmd` launchers compile the selected source and generate a **Day N Demo** shortcut in the project root. Use the shortcut for presentations without a terminal window. Each build uses a new JAR filename, allowing an earlier version to remain open during a rebuild. Build output is stored under `build/` and `dist/` and is excluded from Git.

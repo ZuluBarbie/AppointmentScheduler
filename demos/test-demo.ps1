@@ -7,5 +7,5 @@ $sources = @(Get-ChildItem (Join-Path $PSScriptRoot "day$Day/src") -Filter *.jav
 $tests = @(Get-ChildItem (Join-Path $PSScriptRoot "day$Day/test") -Filter *.java -Recurse | ForEach-Object { $_.FullName })
 & javac --release 21 -encoding UTF-8 -d $output $sources $tests
 if ($LASTEXITCODE -ne 0) { throw 'Test compilation failed.' }
-& java -cp $output demo.AppointmentTest
+& java "-Djava.io.tmpdir=$output" -cp $output demo.AppointmentTest
 if ($LASTEXITCODE -ne 0) { throw 'Appointment tests failed.' }
