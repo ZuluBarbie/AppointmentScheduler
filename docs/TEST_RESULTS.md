@@ -28,3 +28,9 @@ The sample appointment existed only in the verification window's memory.
 Windows GUI verification used isolated data under `build/gui-day3`, not the normal demo data file. Day, Week and Month displayed one, two and three matching appointments respectively. Selecting a row populated the fields and enabled edit/delete controls. Editing a title through **Save changes** refreshed the table and displayed a saved message. Closing and reopening restored the edited title and three stored records. Deletion and write failures were checked by the automated tests, not by manually deleting user records.
 
 NetBeans 31 opened `demos/day3/src/demo/SchedulerFrame.java` with its paired `.form` file in **Design** view. The form controls and Swing component palette were displayed without a form-loading error.
+
+## Day 4 on 5 November 2026
+
+`demos/build-demo.ps1 -Day 4` built the standalone JAR and generated the shortcut. `demos/test-demo.ps1 -Day 4` passed **55 checks**, including 38 adapted regression checks and 17 checks for repeat dates, clash rejection, series editing and deletion, adjacent appointments, saved settings, Day 3 file loading and reminder timing.
+
+A Swing verification run on Windows used a separate file under `build/gui-day4`. The reminder popup displayed the title and start time, and selecting a repeat row populated its series settings. The Add button rejected the overlapping series and displayed its name and date. The verification compared the file bytes before and after rejection. Both rendered windows were checked visually.

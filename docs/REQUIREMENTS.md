@@ -4,19 +4,19 @@ Source: SDN150S Project Brief, due 8 November 2026, general requirements and Pro
 
 ## Application
 
-| Requirement | Status on 4 November |
+| Requirement | Status on 5 November |
 | --- | --- |
 | Java GUI using frame forms | Day 3 JFrame and paired form opened in NetBeans Design |
 | Create appointments | Implemented in Day 2 |
 | Edit and delete appointments | Implemented in Day 3 |
-| Set reminders | Planned for Day 4 |
+| Set reminders | Day 4 displays an alert before an occurrence while the app is open |
 | Daily, weekly and monthly schedule views | Implemented in Day 3 |
 | Constructors, modifiers and control statements | Present in Day 3 classes |
 | Error handling and input validation | Date, time and title validation implemented |
 | Readable code with comments and whitespace | Present; review continues with each milestone |
 | Regular, meaningful version-control updates | Git repository maintained on GitHub |
 
-Recurring appointments, conflict detection and external-calendar integration are suggested extensions in the brief. Recurrence and conflict detection are planned for Day 4; calendar file export is planned for Day 5. File persistence supports the scheduler but is not listed as a separate Project 12 requirement.
+Recurring appointments, conflict detection and external-calendar integration are suggested extensions. Day 4 supports daily and weekly repeats and rejects overlapping occurrences. Calendar file export is planned for Day 5.
 
 ## Submission
 

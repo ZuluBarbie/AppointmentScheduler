@@ -1,0 +1,19 @@
+classDiagram
+Main ..> SchedulerFrame : creates
+SchedulerFrame --|> JFrame
+SchedulerFrame --> AppointmentBook : edits and views
+SchedulerFrame --> Reminders : polls
+AppointmentBook "1" o-- "0..*" Appointment : stores
+AppointmentBook ..> Occurrence : expands
+Reminders ..> Occurrence : tracks
+Occurrence --> Appointment : references
+class Appointment {
+  -Repeat repeat
+  -LocalDate repeatUntil
+  -int reminderMinutes
+  +occursOn(LocalDate) boolean
+}
+class Occurrence {
+  +Appointment appointment
+  +LocalDate date
+}

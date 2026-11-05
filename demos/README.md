@@ -25,6 +25,12 @@ Run **Run Day 3 Demo.cmd**, or use the generated **Day 3 Demo** shortcut. Add an
 
 Data is saved after each successful change. An invalid or unreadable file is preserved and editing is blocked; restore a known-good backup before reopening. A failed write leaves the previous in-memory records intact. Use one window per data file.
 
+## Day 4
+
+Run **Run Day 4 Demo.cmd** or open **Day 4 Demo**. Create an appointment with **DAILY** or **WEEKLY** selected and set its inclusive **Repeat until** date. Use Week or Month to see several occurrences. Select a row and try adding it again to see clash feedback. Set a reminder lead time longer than the time until an upcoming appointment starts, then keep the window open for the popup.
+
+The reminder appears once per occurrence per open session. Editing or deleting a repeat row applies to the series. Back-to-back appointments can share an end and start time.
+
 ## Build and launch
 
 The `.cmd` launchers compile the selected source and generate a **Day N Demo** shortcut in the project root. Use the shortcut for presentations without a terminal window. Each build uses a new JAR filename, allowing an earlier version to remain open during a rebuild. Build output is stored under `build/` and `dist/` and is excluded from Git.
