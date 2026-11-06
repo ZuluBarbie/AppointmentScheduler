@@ -8,7 +8,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.stream.Stream;
 
-/** Holds validated records; a failed save leaves the previous list unchanged. */
 public final class AppointmentBook {
     private final Path file;
     private byte[] savedBytes;
@@ -62,7 +61,6 @@ public final class AppointmentBook {
         save(next);
     }
 
-    /** Week views always run Monday through Sunday, including across years. */
     public List<Occurrence> view(LocalDate anchor, String period) {
         LocalDate from = switch (period) {
             case "Week" -> anchor.with(DayOfWeek.MONDAY);

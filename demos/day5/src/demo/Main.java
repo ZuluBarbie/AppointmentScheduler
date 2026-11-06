@@ -4,7 +4,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 /**
- * Opens the Day 5 appointment window on Swing's event thread.
  * @author Noluthando (GitHub: ZuluBarbie)
  */
 public class Main {

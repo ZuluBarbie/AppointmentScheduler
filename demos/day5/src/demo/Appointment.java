@@ -8,7 +8,6 @@ import java.time.format.ResolverStyle;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
-/** A validated appointment with immutable values. */
 public final class Appointment {
     public enum Repeat { NONE, DAILY, WEEKLY }
     private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter
@@ -61,7 +60,6 @@ public final class Appointment {
         this.reminderMinutes = reminderMinutes;
     }
 
-    /** Parse form values strictly so invalid dates cannot silently change day. */
     public static Appointment fromInput(String title, String date, String start,
             String end, String location) {
         LocalDate parsedDate;

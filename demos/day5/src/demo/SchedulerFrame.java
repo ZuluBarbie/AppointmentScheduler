@@ -13,7 +13,6 @@ import java.util.Locale;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-/** Day 5 frame with repeat settings and in-app reminders. */
 public class SchedulerFrame extends JFrame {
     private AppointmentBook book;
     private LocalDate anchor = LocalDate.now();

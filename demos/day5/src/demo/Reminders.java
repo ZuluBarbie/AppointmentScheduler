@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/** Tracks which upcoming occurrences have already notified this session. */
 public final class Reminders {
     private final Set<Occurrence> shown = new HashSet<>();
 

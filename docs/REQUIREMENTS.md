@@ -27,4 +27,4 @@ Recurring appointments, conflict detection and external-calendar integration are
 - Video demonstration lasting 3-5 minutes.
 - Evidence of group participation and regular repository updates.
 
-The Day 5 report reflects the current code and verified results. Eight member names and student numbers are included. Noluthando's surname and the recording remain outstanding. See the [submission guide](SUBMISSION.md) for the final checks.
+The Day 5 report reflects the current code and verified results. Eight member names and student numbers are included. The recording remains outstanding. See the [submission guide](SUBMISSION.md) for the final checks.

@@ -3,7 +3,6 @@ package demo;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-/** One displayed date, linked to its stored appointment or series. */
 public record Occurrence(Appointment appointment, LocalDate date) {
     public LocalDateTime start() { return date.atTime(appointment.getStart()); }
 

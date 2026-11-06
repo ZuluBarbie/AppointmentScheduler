@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 
-/** Writes a snapshot of displayed occurrences in the RFC 5545 iCalendar format. */
 public final class CalendarExport {
     private static final DateTimeFormatter UTC = DateTimeFormatter
             .ofPattern("uuuuMMdd'T'HHmmss'Z'", Locale.ROOT).withZone(ZoneOffset.UTC);
