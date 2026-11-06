@@ -4,9 +4,9 @@ Source: SDN150S Project Brief, due 8 November 2026, general requirements and Pro
 
 ## Application
 
-| Requirement | Status on 5 November |
+| Requirement | Status on 6 November |
 | --- | --- |
-| Java GUI using frame forms | Day 3 JFrame and paired form opened in NetBeans Design |
+| Java GUI using frame forms | Day 5 project opened in NetBeans 31 and its JFrame loaded in Design view |
 | Create appointments | Implemented in Day 2 |
 | Edit and delete appointments | Implemented in Day 3 |
 | Set reminders | Day 4 displays an alert before an occurrence while the app is open |
@@ -16,7 +16,7 @@ Source: SDN150S Project Brief, due 8 November 2026, general requirements and Pro
 | Readable code with comments and whitespace | Present; review continues with each milestone |
 | Regular, meaningful version-control updates | Git repository maintained on GitHub |
 
-Recurring appointments, conflict detection and external-calendar integration are suggested extensions. Day 4 supports daily and weekly repeats and rejects overlapping occurrences. Calendar file export is planned for Day 5.
+Recurring appointments, conflict detection and external-calendar integration are suggested extensions. Day 5 supports daily and weekly repeats, rejects overlapping occurrences and exports the selected view for calendar import.
 
 ## Submission
 
@@ -27,4 +27,4 @@ Recurring appointments, conflict detection and external-calendar integration are
 - Video demonstration lasting 3-5 minutes.
 - Evidence of group participation and regular repository updates.
 
-The current milestone is not a completed submission. The report reflects the current code and verified results. Eight member names and student numbers are included; Noluthando's surname remains outstanding. The final report and recording follow completion of the remaining functions.
+The Day 5 report reflects the current code and verified results. Eight member names and student numbers are included. Noluthando's surname and the recording remain outstanding. See the [submission guide](SUBMISSION.md) for the final checks.

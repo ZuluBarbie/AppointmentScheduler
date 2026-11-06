@@ -34,3 +34,11 @@ NetBeans 31 opened `demos/day3/src/demo/SchedulerFrame.java` with its paired `.f
 `demos/build-demo.ps1 -Day 4` built the standalone JAR and generated the shortcut. `demos/test-demo.ps1 -Day 4` passed **55 checks**, including 38 adapted regression checks and 17 checks for repeat dates, clash rejection, series editing and deletion, adjacent appointments, saved settings, Day 3 file loading and reminder timing.
 
 A Swing verification run on Windows used a separate file under `build/gui-day4`. The reminder popup displayed the title and start time, and selecting a repeat row populated its series settings. The Add button rejected the overlapping series and displayed its name and date. The verification compared the file bytes before and after rejection. Both rendered windows were checked visually.
+
+## Day 5 on 6 November 2026
+
+The standalone JAR built and the Day 5 shortcut was generated. `demos/test-demo.ps1 -Day 5` passed **64 checks**. Nine new checks covered iCalendar framing, visible recurrence dates, UTC conversion, text escaping, UTF-8 folding, unique event IDs, file replacement and a daylight-saving gap.
+
+NetBeans 31 opened the Day 5 project and displayed its JFrame in **Design** view. The project's Ant build also produced a JAR using the Ant installation bundled with NetBeans.
+
+A Windows Swing test activated **Export view (.ics)**, approved a destination in the save chooser and verified the success message and generated file. A two-day series produced one event in the Day view. The source data remained intact. The rendered window was inspected. An import into a third-party calendar was outside this test.

@@ -31,6 +31,10 @@ Run **Run Day 4 Demo.cmd** or open **Day 4 Demo**. Create an appointment with **
 
 The reminder appears once per occurrence per open session. Editing or deleting a repeat row applies to the series. Back-to-back appointments can share an end and start time.
 
+## Day 5
+
+Run **Run Day 5 Demo.cmd** or open **Day 5 Demo**. Choose Day, Week or Month, then click **Export view (.ics)** and choose a destination. Only the displayed occurrences go into the file. If the destination exists, confirm replacement or keep the original. The file is a snapshot for import into an external calendar.
+
 ## Build and launch
 
 The `.cmd` launchers compile the selected source and generate a **Day N Demo** shortcut in the project root. Use the shortcut for presentations without a terminal window. Each build uses a new JAR filename, allowing an earlier version to remain open during a rebuild. Build output is stored under `build/` and `dist/` and is excluded from Git.
