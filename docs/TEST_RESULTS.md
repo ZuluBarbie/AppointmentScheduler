@@ -42,3 +42,7 @@ The standalone JAR built and the Day 5 shortcut was generated. `demos/test-demo.
 NetBeans 31 opened the Day 5 project and displayed its JFrame in **Design** view. The project's Ant build also produced a JAR using the Ant installation bundled with NetBeans.
 
 A Windows Swing test activated **Export view (.ics)**, approved a destination in the save chooser and verified the success message and generated file. A two-day series produced one event in the Day view. The source data remained intact. The rendered window was inspected. An import into a third-party calendar was outside this test.
+
+## Welcome screen — 7 November 2026
+
+All 64 Day 5 business checks passed after the appearance changes. A Swing integration check confirmed that Get started opens SchedulerFrame and disposes WelcomeFrame using an isolated data file. Both windows were rendered and inspected for clipping at their default sizes. The standalone launcher was rebuilt.

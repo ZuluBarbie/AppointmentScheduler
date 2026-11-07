@@ -10,11 +10,14 @@ public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             try {
-                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                for (UIManager.LookAndFeelInfo theme : UIManager.getInstalledLookAndFeels()) {
+                    if ("Nimbus".equals(theme.getName())) { UIManager.setLookAndFeel(theme.getClassName()); break; }
+                }
+                AppTheme.install();
             } catch (Exception ex) {
                 System.err.println("Using default appearance: " + ex.getMessage());
             }
-            new SchedulerFrame().setVisible(true);
+            new WelcomeFrame().setVisible(true);
         });
     }
 }

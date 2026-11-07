@@ -79,8 +79,17 @@ public class SchedulerFrame extends JFrame {
             });
             timer.start();
         }
-        setMinimumSize(new java.awt.Dimension(1000,440));
-        setSize(1120,560);
+        AppTheme.style(getContentPane());
+        AppTheme.primary(addButton);
+        table.setRowHeight(34);
+        table.setShowGrid(false);
+        table.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        table.getTableHeader().setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 14));
+        table.getTableHeader().setPreferredSize(new java.awt.Dimension(0, 38));
+        scrollPane.setBorder(BorderFactory.createLineBorder(new Color(218, 227, 234)));
+        options.setBorder(BorderFactory.createEmptyBorder(12, 0, 12, 0));
+        setMinimumSize(new java.awt.Dimension(1120,540));
+        setSize(1240,680);
         setLocationRelativeTo(null);
     }
 
