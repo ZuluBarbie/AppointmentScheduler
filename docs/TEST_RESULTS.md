@@ -46,3 +46,5 @@ A Windows Swing test activated **Export view (.ics)**, approved a destination in
 ## Welcome screen — 7 November 2026
 
 All 64 Day 5 business checks passed after the appearance changes. A Swing integration check confirmed that Get started opens SchedulerFrame and disposes WelcomeFrame using an isolated data file. Both windows were rendered and inspected for clipping at their default sizes. The standalone launcher was rebuilt.
+
+The welcome page was simplified and the original scheduler appearance restored with Segoe UI fonts. The paired welcome form opened successfully in NetBeans Design view. The welcome-to-scheduler check passed again. NetBeans Ant clean jar succeeded using release 21, without the system-modules warning.

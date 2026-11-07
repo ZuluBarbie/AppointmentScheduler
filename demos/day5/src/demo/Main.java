@@ -10,10 +10,7 @@ public class Main {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             try {
-                for (UIManager.LookAndFeelInfo theme : UIManager.getInstalledLookAndFeels()) {
-                    if ("Nimbus".equals(theme.getName())) { UIManager.setLookAndFeel(theme.getClassName()); break; }
-                }
-                AppTheme.install();
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             } catch (Exception ex) {
                 System.err.println("Using default appearance: " + ex.getMessage());
             }

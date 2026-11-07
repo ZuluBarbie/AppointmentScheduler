@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="AppointmentSchedulerDay5" default="default" basedir=".">
     <description>Builds the Day 5 appointment scheduler.</description>
+    <target name="-post-init">
+        <presetdef name="javac">
+            <javac release="${javac.release}"/>
+        </presetdef>
+    </target>
     <import file="nbproject/build-impl.xml"/>
 </project>

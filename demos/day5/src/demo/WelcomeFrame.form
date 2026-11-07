@@ -19,7 +19,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="brandLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="GROUP 12  /  APPOINTMENT SCHEDULER" />
+            <Property name="text" type="java.lang.String" value="Group 12" />
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
@@ -29,7 +29,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="welcomeLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="A little planning. A clearer day." />
+            <Property name="text" type="java.lang.String" value="Welcome to Appointment Scheduler" />
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
@@ -39,7 +39,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="introLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Your appointments, organised in one place." />
+            <Property name="text" type="java.lang.String" value="Manage your appointments and reminders." />
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
@@ -63,17 +63,17 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="scheduleLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Plan your day, week or month" />
+            <Property name="text" type="java.lang.String" value="View appointments by day, week or month." />
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="remindersLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Stay on track with reminders and repeat appointments" />
+            <Property name="text" type="java.lang.String" value="Add reminders and repeat appointments." />
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="exportLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Take your schedule with you using calendar export" />
+            <Property name="text" type="java.lang.String" value="Export appointments to your calendar." />
           </Properties>
         </Component>
       </SubComponents>
@@ -92,7 +92,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="hintLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ready to plan your next appointment?" />
+            <Property name="text" type="java.lang.String" value="Choose Get started to open your schedule." />
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="startButton">
