@@ -1,8 +1,8 @@
 # Group 12 submission
 
-- [Day 5 Java source and NetBeans project](../demos/day5)
-- [Technical report PDF](SDN150S_Project12_Technical_Report.pdf)
-- A 3–5 minute demo showing the NetBeans form, appointment management, schedule views, reminders and export
-- Evidence of each member’s contribution
+- Final source project: `demos/day5`, entry point `demo.Main`.
+- Technical report PDF with UML and pseudocode.
+- Complete Java listing: `TimeMatters_Complete_Java_Program.pdf`.
+- A recorded demonstration lasting 3-5 minutes.
 
-Due **8 November 2026**. Confirm the brief’s “Cabri 11” font wording and whether the full Java listing belongs inside the PDF.
+Due 8 November 2026. Confirm the brief's Cabri 11 wording and whether the complete listing must be appended to the report or can be supplied separately. The recording and actual contribution descriptions require group input.

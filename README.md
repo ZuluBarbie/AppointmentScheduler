@@ -1,13 +1,13 @@
 # Appointment Scheduler
 
-Java Swing project for SDN150S, Group 12. Day 5 supports appointment management, reminders, repeats, conflict checks and calendar export.
+Time Matters is a Java Swing project for SDN150S, Group 12. Day 5 supports appointment management, reminders, repeats, conflict checks and calendar export.
 
 ## Run
 
 - **NetBeans:** Open `demos/day5` as a project and choose **Run Project**.
 - **Windows:** With JDK 21 or newer, double-click **Run Day 5 Demo.cmd**.
 
-The welcome screen opens first. Choose **Get started** to open your schedule. In NetBeans, open `WelcomeFrame.java` in **Design** to edit the welcome form.
+The welcome screen opens first. Choose **Open scheduler** to see your schedule, or **Submission files** to open the prepared PDFs, Word documents and source ZIP. Edit `NewJFrame1.java` in Source; `SchedulerFrame.java` has a paired NetBeans form for Design view.
 
 Use **Export view (.ics)** to save the displayed appointments.
 

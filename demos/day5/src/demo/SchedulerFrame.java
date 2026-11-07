@@ -80,8 +80,14 @@ public class SchedulerFrame extends JFrame {
             timer.start();
         }
         AppTheme.style(getContentPane());
-        setMinimumSize(new java.awt.Dimension(1000,440));
-        setSize(1120,560);
+        AppTheme.primary(addButton);
+        AppTheme.table(table);
+        setTitle("Time Matters - Appointment Scheduler");
+        options.setBorder(BorderFactory.createEmptyBorder(12, 0, 12, 0));
+        statusLabel.setBorder(BorderFactory.createEmptyBorder(6, 0, 0, 0));
+        statusLabel.setForeground(AppTheme.INK);
+        setMinimumSize(new java.awt.Dimension(1120,560));
+        setSize(1240,680);
         setLocationRelativeTo(null);
     }
 
@@ -115,7 +121,7 @@ public class SchedulerFrame extends JFrame {
     }
 
     private void message(String text, boolean error) {
-        statusLabel.setForeground(error ? new Color(170,20,20) : new Color(0,90,35));
+        statusLabel.setForeground(error ? new Color(170, 35, 35) : AppTheme.INK);
         statusLabel.setText(text);
     }
 

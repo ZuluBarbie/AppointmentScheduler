@@ -1,21 +1,16 @@
 classDiagram
-Main ..> SchedulerFrame : creates
+Main ..> NewJFrame1 : creates
+NewJFrame1 --|> JFrame
+NewJFrame1 ..> SchedulerFrame : opens
 SchedulerFrame --|> JFrame
-SchedulerFrame --> AppointmentBook : edits and views
-SchedulerFrame --> Reminders : polls
-SchedulerFrame ..> CalendarExport : exports view
-CalendarExport ..> Occurrence : serialises
-AppointmentBook "1" o-- "0..*" Appointment : stores
-AppointmentBook ..> Occurrence : expands
-Reminders ..> Occurrence : tracks
-Occurrence --> Appointment : references
-class Appointment {
-  -Repeat repeat
-  -LocalDate repeatUntil
-  -int reminderMinutes
-  +occursOn(LocalDate) boolean
-}
-class Occurrence {
-  +Appointment appointment
-  +LocalDate date
-}
+Main ..> AppTheme
+NewJFrame1 ..> AppTheme
+SchedulerFrame ..> AppTheme
+SchedulerFrame --> AppointmentBook
+SchedulerFrame --> Reminders
+SchedulerFrame ..> CalendarExport
+AppointmentBook "1" o-- "0..*" Appointment
+AppointmentBook ..> Occurrence
+Reminders ..> Occurrence
+CalendarExport ..> Occurrence
+Occurrence --> Appointment

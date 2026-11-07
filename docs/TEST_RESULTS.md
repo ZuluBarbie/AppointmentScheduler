@@ -48,3 +48,9 @@ A Windows Swing test activated **Export view (.ics)**, approved a destination in
 All 64 Day 5 business checks passed after the appearance changes. A Swing integration check confirmed that Get started opens SchedulerFrame and disposes WelcomeFrame using an isolated data file. Both windows were rendered and inspected for clipping at their default sizes. The standalone launcher was rebuilt.
 
 The welcome page was simplified and the original scheduler appearance restored with Segoe UI fonts. The paired welcome form opened successfully in NetBeans Design view. The welcome-to-scheduler check passed again. NetBeans Ant clean jar succeeded using release 21, without the system-modules warning.
+
+## Time Matters review on 7 November 2026
+
+NetBeans Ant clean jar and the standalone build succeeded. All 64 automated checks passed. Swing checks verified welcome navigation, the saved appointments, Day/Week/Month filtering and enabled edit/export controls after selection. The checks compared saved file bytes to confirm user data was unchanged. Both the dark welcome and light scheduler layouts were rendered and inspected. The submission ZIP was extracted and its Ant build passed.
+
+The welcome screen Submission files button resolves the prepared folder from both the NetBeans and standalone working directories. All 64 checks passed after adding the button; the Ant build and navigation/view verification passed again.
