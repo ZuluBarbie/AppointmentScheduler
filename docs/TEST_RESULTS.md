@@ -54,3 +54,5 @@ The welcome page was simplified and the original scheduler appearance restored w
 NetBeans Ant clean jar and the standalone build succeeded. All 64 automated checks passed. Swing checks verified welcome navigation, the saved appointments, Day/Week/Month filtering and enabled edit/export controls after selection. The checks compared saved file bytes to confirm user data was unchanged. Both the dark welcome and light scheduler layouts were rendered and inspected. The submission ZIP was extracted and its Ant build passed.
 
 The welcome screen Submission files button resolves the prepared folder from both the NetBeans and standalone working directories. All 64 checks passed after adding the button; the Ant build and navigation/view verification passed again.
+
+Submission access was removed from the application at the user request. A Windows desktop shortcut opens the separate Submission folder. The rebuilt app passed all 64 checks and the navigation/view checks; the source ZIP contains no submission documents or file-access button.
