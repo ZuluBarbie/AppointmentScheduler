@@ -12,3 +12,9 @@ The welcome screen opens first. Choose **Open scheduler** to see your schedule. 
 Use **Export view (.ics)** to save the displayed appointments.
 
 [Technical report](docs/SDN150S_Project12_Technical_Report.pdf) Â· [Test results](docs/TEST_RESULTS.md) Â· [Earlier demos](demos/README.md)
+
+## Submission files
+
+[Report PDF](Submission/TimeMatters_Technical_Report.pdf) · [Complete Java listing](Submission/TimeMatters_Complete_Java_Program.pdf) · [NetBeans source ZIP](Submission/TimeMatters_NetBeans_Source.zip)
+
+[Demo script](Submission/TimeMatters_Demo_Script.docx) · [Editable report](Submission/TimeMatters_Technical_Report.docx) · [Group input and recording worksheet](Submission/TimeMatters_Group_Input_and_Recording.docx)
