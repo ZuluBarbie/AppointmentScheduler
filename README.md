@@ -11,7 +11,7 @@ The welcome screen opens first. Choose **Open scheduler** to see your schedule. 
 
 Use **Export view (.ics)** to save the displayed appointments.
 
-[Technical report](docs/SDN150S_Project12_Technical_Report.pdf) · [Test results](docs/TEST_RESULTS.md) · [Earlier demos](demos/README.md)
+[Technical report](Submission/TimeMatters_Technical_Report.pdf) · [Test results](docs/TEST_RESULTS.md) · [Earlier demos](demos/README.md)
 
 ## Submission files
 
